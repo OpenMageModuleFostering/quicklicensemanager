@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Soraco_Qlm>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>1.0.0</version>
+    </Soraco_Qlm>
+  </modules>
+</config>

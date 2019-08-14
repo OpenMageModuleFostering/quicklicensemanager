@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/QuickLicenseManager",
+    "type": "magento-module",
+    "license": "LGPL",
+    "homepage": "",
+    "description": "Integration of Quick License Manager with Magento",
+    "authors": [
+    {
+        "name": "Soraco Technologies",
+        "email": "ralph@soraco.co"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

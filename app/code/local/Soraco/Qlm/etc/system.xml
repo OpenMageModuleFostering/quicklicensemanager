@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <qlm translate="label" module="soraco_qlm">
+            <label>QLM</label>
+            <sort_order>0</sort_order>
+        </qlm>
+    </tabs>
+    <sections>
+        <soraco_qlm translate="label" module="soraco_qlm">
+            <label>General</label>
+            <tab>qlm</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+ 
+            <groups>
+                <qlm_group translate="label" module="soraco_qlm">
+                    <label>Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+ 
+                    <fields>
+                        <qlm_apiurl translate="label">
+                            <label>License Server Url: </label>
+                            <comment>*Mandatory</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </qlm_apiurl>
+                    </fields>
+                </qlm_group>
+            </groups>
+        </soraco_qlm>
+    </sections>
+</config>
