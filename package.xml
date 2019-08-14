@@ -1,18 +1,59 @@
 <?xml version="1.0"?>
 <package>
     <name>QuickLicenseManager</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <stability>stable</stability>
     <license uri="https://opensource.org/licenses/lgpl-license">LGPL</license>
     <channel>community</channel>
     <extends/>
-    <summary>Integration of Quick License Manager with Magento</summary>
-    <description>Automatically generate and email a license key to your customer when an order is placed via Magento.</description>
-    <notes>First Release.</notes>
+    <summary>Integrates QLM with Magento by automatically generating a license key when a new order is placed.&#xD;
+&#xD;
+</summary>
+    <description>&lt;a href="https://soraco.co"&gt;Quick License Manager&lt;/a&gt;&#xD;
+ is a software license protection tool that protects your application against piracy. Quick License Manager Professional is a commercial product that sells for &lt;b&gt;$US 600 &lt;/b&gt; per license. You can consult our pricing and purchase a QLM Professional license on our &lt;a href="https://soraco.co/pricing"&gt;web site.&lt;/a&gt; This QLM Magento Extension is available free of charge to all &lt;a href="https://soraco.co/quick-license-manager"&gt;QLM Professional&lt;/a&gt; customers.&#xD;
+&#xD;
+&lt;br /&gt;&lt;br /&gt;&#xD;
+If you use Quick License Manager (QLM) to protect your application against piracy, you can now streamline the license key generation process with our Magento integration.&#xD;
+When an order is placed via Magento, our Magento extension communicates with the QLM License Server and sends the order and customer information to the QLM License Server.&#xD;
+The QLM License Server populates its database with the order information, creates the required license keys and sends them back to Magento.&#xD;
+Magento then stores the License Key within the order and includes the license key in the email that is sent to the customer.&#xD;
+&lt;br /&gt;&#xD;
+&lt;br /&gt;&#xD;
+Features:&#xD;
+&lt;br /&gt;&#xD;
+- Sends order information to the QLM License Server&lt;br /&gt;&#xD;
+- Generates a license key based on the order&lt;br /&gt;&#xD;
+- Embeds the license key in the email sent to the customer&#xD;
+&lt;br /&gt;&lt;br /&gt;&#xD;
+&#xD;
+To integrate QLM with Magento, follow the steps below:&#xD;
+&lt;br /&gt;&#xD;
+- Install the Quick License Manage Extension&lt;br /&gt;&#xD;
+- Go to System Configuration&lt;br /&gt;&#xD;
+- Locate the QLM panel on the left hand side&lt;br /&gt;&#xD;
+- Go to the QLM / General section&lt;br /&gt;&#xD;
+- Set the License Server Url to the URL of your QLM License Server. Example: http://quicklicensemanager.com/qlmdemov9/qlmservice.asmx&lt;br /&gt;&#xD;
+- Click Save Config&#xD;
+&lt;br /&gt;&lt;br /&gt;&#xD;
+Next, you need to configure your product as follows:&lt;br /&gt;&#xD;
+&#xD;
+- Go to Catalog / Manage Products&lt;br /&gt;&#xD;
+- Add a new product of type Downloadable.&lt;br /&gt;&#xD;
+- In the General section, locate the QLM Settings property&lt;br /&gt;&#xD;
+- Set the value as follows (replace the values to match your product): &amp;is_productid=1&amp;is_majorversion=1&amp;is_minorversion=0&amp;is_licensemodel=permanent&amp;is_features=0:3&lt;br /&gt;&#xD;
+- Click Save&lt;br /&gt;&lt;br /&gt;&#xD;
+&#xD;
+Now place an order for your product and verify that:&lt;br /&gt;&#xD;
+- Customer information entered in Magento was published to the QLM License Server&lt;br /&gt;&#xD;
+- A license key was generated in the QLM License Server&lt;br /&gt;&#xD;
+- A license key is associated to the order in Magento&lt;br /&gt;&#xD;
+- A license key was included in the email sent to the customer&lt;br /&gt;&#xD;
+</description>
+    <notes>Bug fix: Do not display License Key information if the product does not have the QLM Settings attribute set.</notes>
     <authors><author><name>Soraco Technologies</name><user>soraco</user><email>ralph@soraco.co</email></author></authors>
-    <date>2017-02-19</date>
-    <time>14:01:38</time>
-    <contents><target name="magelocal"><dir name="Soraco"><dir name="Qlm"><dir name="Helper"><file name="Data.php" hash="a57fcc28de8d31eb65b13b66818bcf81"/></dir><dir name="Model"><file name="Observer.php" hash="6022d42249bb1e80b4125e9567349cfb"/></dir><dir name="controllers"><file name="IndexController.php" hash="cb53d827f738050e0c6bc0a0ed0595c5"/></dir><dir name="etc"><file name="config.xml" hash="9290adf97b1784581523f8b9b4d161c1"/><file name="system.xml" hash="45d020bf56efceb0bf8c984ae81205d3"/></dir><dir name="sql"><dir name="soraco_qlm_setup"><file name="mysql4-install-0.1.0.php" hash="0e8ebc44878479cd35bc3562731622ad"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Soraco_Qlm.xml" hash="cf228883649a589dd371d304591135c3"/></dir></target></contents>
+    <date>2017-07-14</date>
+    <time>21:57:29</time>
+    <contents><target name="magelocal"><dir name="Soraco"><dir name="Qlm"><dir name="Helper"><file name="Data.php" hash="a57fcc28de8d31eb65b13b66818bcf81"/></dir><dir name="Model"><file name="Observer.php" hash="f73876a029d76e5e30ec8b29b36b1be7"/></dir><dir name="controllers"><file name="IndexController.php" hash="cb53d827f738050e0c6bc0a0ed0595c5"/></dir><dir name="etc"><file name="config.xml" hash="8ce561156ae8690927297aad72efdbb4"/><file name="system.xml" hash="45d020bf56efceb0bf8c984ae81205d3"/></dir><dir name="sql"><dir name="soraco_qlm_setup"><file name="mysql4-install-0.1.0.php" hash="0e8ebc44878479cd35bc3562731622ad"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Soraco_Qlm.xml" hash="7df16536eb7f7a82c433a2466b73d5f6"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>7.0.0</max></php></required></dependencies>
 </package>

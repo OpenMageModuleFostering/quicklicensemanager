@@ -30,25 +30,29 @@ class Soraco_Qlm_Model_Observer {
 					
 					$coll =  Mage::getModel('catalog/product')->load($pid);
 					$licparameter = $coll->getLicparameter();
-					
-					$parameter["is_quantity"] = $item->getQtyOrdered();
-					
-					$keyid = Mage::helper("soraco_qlm")->generatekeydata($pid,$licparameter,$parameter);
-					
-					$existentOptions = $item->getProductOptions();
-					if (!isset($existentOptions['additional_options'])) {
-						$existentOptions['additional_options'] = array(); 
-					}
-					
-					if($keyid!="")
+
+					if($licparameter != "")
 					{
-						$existentOptions['additional_options'][] = array(
-							'label' => 'Licence Key',
-							'value' => $keyid,
-							'print_value' => $keyid
-						);
-						$item->setProductOptions($existentOptions);	
-					}					
+						$parameter["is_quantity"] = $item->getQtyOrdered();
+					
+						$keyid = Mage::helper("soraco_qlm")->generatekeydata($pid,$licparameter,$parameter);
+							
+					
+						$existentOptions = $item->getProductOptions();
+						if (!isset($existentOptions['additional_options'])) {
+							$existentOptions['additional_options'] = array(); 
+						}
+					
+						if($keyid!="")
+						{
+							$existentOptions['additional_options'][] = array(
+								'label' => 'Licence Key',
+								'value' => $keyid,
+								'print_value' => $keyid
+							);
+							$item->setProductOptions($existentOptions);	
+						}
+					}								
 				}       
 			}
 			
