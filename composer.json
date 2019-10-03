@@ -1,18 +1,5 @@
 {
-    "name": "OpenMageModuleFostering/QuickLicenseManager",
-    "type": "magento-module",
-    "license": "LGPL",
-    "homepage": "",
-    "description": "Integrates QLM with Magento by automatically generating a license key when a new order is placed.
-
-",
-    "authors": [
-    {
-        "name": "Soraco Technologies",
-        "email": "ralph@soraco.co"
-    }
-],
-    "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+    "keywords": [
+        "openmage-module"
+    ]
 }
